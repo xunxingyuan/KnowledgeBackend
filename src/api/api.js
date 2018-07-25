@@ -34,11 +34,19 @@ export default {
     },
     getUser: (data)=>{
       return get('/api/users/query',data)
+    },
+    getWallet: ()=>{
+      return get('/api/wallet/query')
     }
   },
   public: {
     query: ()=>{
       return get('/api/public/query')
+    }
+  },
+  knowledge: {
+    query: ()=>{
+      return get('/api/knowledge/query')
     }
   }
 }
