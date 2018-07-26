@@ -12,7 +12,10 @@
         <p>加入时间：{{new Date(userInfo.create).toLocaleDateString()}}</p>
       </div>
       <div class="publish" v-if="activeMenu.id === 4">
-        <p v-for="item in publishList">{{item}}</p>
+        <div v-for="item in publishList" class="knowledgeItem">
+          <p>{{item.title}}</p>
+          <span>{{item.preview}}</span>
+        </div>
       </div>
       <div class="wallet" v-if="activeMenu.id === 5">
         {{walletData}}
@@ -115,6 +118,17 @@
       flex: 1;
       border-left: solid 1px #ddd;
       min-height: 100%;
+      .publish{
+        width: 100%;
+        padding: 1rem;
+        .knowledgeItem{
+          width: 100%;
+          border: solid 1px #ddd;
+          padding: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+
     }
   }
 </style>
